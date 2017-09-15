@@ -8,10 +8,9 @@ class Icon extends Component {
   }
 
   render() {
-    console.log('render from ICON '+this.props.widgetId);
     return (
       <div>
-        <input value={this.props.widgets[this.props.widgetId].value} onChange={this.onChange} />
+        <input value={this.props.widget.value} onChange={this.onChange} />
       </div>
     );
   }
@@ -20,7 +19,7 @@ class Icon extends Component {
 const mapDispatchToProps = { updateIconValue };
 
 const mapStateToProps = (state, ownProps) => ({
-  widgets: state.widgets,
+  widget: state.widgets[ownProps.widgetId]
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Icon);

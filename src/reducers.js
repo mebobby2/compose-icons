@@ -8,7 +8,7 @@ export default combineReducers({
   widgets: (state = { [icon.id]: icon, [icon2.id]: icon2 }, action) => {
     switch (action.type) {
       case UPDATE_ICON_VALUE:
-        const widget = state[action.widgetId];
+        const widget = { ...state[action.widgetId] };
         widget.value = action.value;
         state[action.widgetId] = widget;
         return { ...state, [action.widgetId]: widget };

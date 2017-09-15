@@ -21,7 +21,6 @@ class App extends Component {
   };
 
   render() {
-    console.log('render from APP');
     const widgets = Object.keys(this.props.widgets).map((widgetId) => {
       const widgetName = this.props.widgets[widgetId].name;
       const Component = widgetMap[widgetName];
