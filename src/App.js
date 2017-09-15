@@ -38,8 +38,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  widgets: state.widgets,
-  widgetId: state.widgetId,
+  widgets: state.widgets
 });
 
 export default connect(mapStateToProps, { addIcon })(App);
